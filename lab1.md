@@ -21,5 +21,5 @@ Integration Layer (Tầng tích hợp):
 - Đóng vai trò trung gian, đảm bảo tính tương thích giữa các hệ thống khác nhau.
 
 # Biểu đồ Package
-![Use Case diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3XTNSNPcda9HVd4g5vThRa5EVcLgge9kQO5kZPr2Q75g4PTpJcPgNWcAK71fGMfHMMPnVX6AC4Axhfs2Xaz-UcQU9efQ966egNfwS245AmK_VqKWmD3YN9IQM9AgeA_WafgJ2cI0BDEqKl1KICnLICzFuU9oICrB0Ve50000__y30000))
+![package diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3XTNSNPcda9HVd4g5vThRa5EVcLgge9kQO5kZPr2Q75g4PTpJcPgNWcAK71fGMfHMMPnVX6AC4Axhfs2Xaz-UcQU9efQ966egNfwS245AmK_VqKWmD3YN9IQM9AgeA_WafgJ2cI0BDEqKl1KICnLICzFuU9oICrB0Ve50000__y30000))
   
