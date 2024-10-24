@@ -1,4 +1,4 @@
-Đề xuất Kiến trúc Layered vì:
+Đề xuất Kiến trúc Layer vì:
 - Khả năng mở rộng tốt: Việc phân tầng giúp hệ thống dễ dàng mở rộng khi số lượng nhân viên và khối lượng dữ liệu tăng lên.
 - Bảo trì dễ dàng: Mỗi tầng trong kiến trúc xử lý một chức năng cụ thể, giúp dễ dàng bảo trì và cập nhật hệ thống.
 - Tính bảo mật cao: Sử dụng các cơ chế bảo mật hiện đại như mã hóa, xác thực và kiểm tra audit logs giúp bảo vệ thông tin nhạy cảm.
