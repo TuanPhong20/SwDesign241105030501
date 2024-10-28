@@ -1,4 +1,4 @@
-# 1.Phân tích Kiến trúc
+# 1.Phân tích iến trúc
 Đề xuất MVC vì:
 - Lợi ích
     + Tách biệt giữa các thành phần: Giúp dễ dàng thay đổi giao diện hoặc quy trình nghiệp vụ mà không ảnh hưởng đến các phần còn lại của     hệ thống.
@@ -21,7 +21,7 @@ Controller (Điều khiển):
 - Đối với các thao tác đặc biệt như tính toán bảng lương tự động, Controller sẽ điều khiển quá trình này dựa trên cấu trúc nghiệp vụ trong Model và trả kết quả qua View.
 
 Biểu đồ Package
-![package diagram](https://www.planttext.com/api/plantuml/png/X5FBReCm4Bpp5HRt_40FLSZZa0Dg53MvR-rjwjROr3QjeYfVraC_gR_GDGP2WIWSGEpEUcQ7uVVxP-uyM5yLAYc1ly4HMPeVbYop_4LwvBwocBAl965qjOZS25HKPCt55JZ7raMfp0bnK7wK1NAmOb3ULiG03X-iG3limQb0xRjgfsm57fveY6MSetDfJyDbUhLO6gr9kZHwehsrvfMQEMWwCj2i5XtgdCJxlsqF4ZzxH9sOTb-sqHxjCt2SrjCQiDRUdlQR2SGEIsDzu97ws4ESnwHaZJLAiKmKKjzYRXLUTfsaRywCAaRq0pV8Mn_GQ4S1Q1UzGCRVDTIlzbkzLm5Hug3T28oXdCtk-nBlo35hFgH0oWM59wsXFK30nqc2xl2zGkSZb95higmKX1p5kJe9OuQzesTMvyrD4jHp0LWAyAGalAS9wPwZ5k7N-mC00F__0m00)
+![diagram](https://www.planttext.com/api/plantuml/png/X5FBReCm4Bpp5HRt_40FLSZZa0Dg53MvR-rjwjROr3QjeYfVraC_gR_GDGP2WIWSGEpEUcQ7uVVxP-uyM5yLAYc1ly4HMPeVbYop_4LwvBwocBAl965qjOZS25HKPCt55JZ7raMfp0bnK7wK1NAmOb3ULiG03X-iG3limQb0xRjgfsm57fveY6MSetDfJyDbUhLO6gr9kZHwehsrvfMQEMWwCj2i5XtgdCJxlsqF4ZzxH9sOTb-sqHxjCt2SrjCQiDRUdlQR2SGEIsDzu97ws4ESnwHaZJLAiKmKKjzYRXLUTfsaRywCAaRq0pV8Mn_GQ4S1Q1UzGCRVDTIlzbkzLm5Hug3T28oXdCtk-nBlo35hFgH0oWM59wsXFK30nqc2xl2zGkSZb95higmKX1p5kJe9OuQzesTMvyrD4jHp0LWAyAGalAS9wPwZ5k7N-mC00F__0m00)
   
 # 2.Cơ chế phân tích
 - Cơ chế xử lý lương tự động
@@ -38,3 +38,19 @@ Biểu đồ Package
       + Phù hợp cho: Đáp ứng nhu cầu theo dõi thông tin và minh bạch trong thông tin làm việc của nhân viên.
  
 # 3.Phân tích ca sử dụng Payment
+![diagram](https://www.planttext.com/api/plantuml/png/R90n3i8m34LtJf6n35mW0nAY30n8I9p0fAwmv2QGE9LwDWQEn1LeAAaATBJ_VzzVVjuVk-RAhaDKgxKwGkSTymbzImQrydYB6AHVDsYbM2w-3HEa184pX3SZdh35d9kK8W_xSip8nDpTAJj_C_NPCeH0DHaGSbOh0smYWs2l3rt_NHFyW79nbLOLChNe4_HHDesBLiQ4mPZ8t4ihwuJgBZ_cXti1003__mC0)
+
+- Employee: Chịu trách nhiệm lưu trữ và cung cấp thông tin cá nhân của nhân viên, đặc biệt các thông tin cần thiết cho việc tính lương.
+- TimeCard: Đảm bảo dữ liệu chấm công được ghi nhận và lưu trữ, phục vụ cho việc tính lương theo giờ hoặc theo dự án.
+- PaymentClassification: Tính toán tiền lương dựa trên phân loại của nhân viên. Lớp này có nhiệm vụ tính toán lương theo giờ làm việc (nếu là lương theo giờ), lương cố định, hoặc lương cố định cộng hoa hồng (nếu là lương hoa hồng).
+- PaymentMethod: Xác định phương thức thanh toán của nhân viên và gửi tiền đến nơi nhận lương.
+- PayrollDatabase: Cung cấp dữ liệu cho lớp PayrollService và cập nhật các thay đổi về thông tin nhân viên hoặc chấm công nếu có.
+- PayrollService: Điều phối các hoạt động để xử lý lương. Chịu trách nhiệm điều khiển và kết nối các lớp khác trong ca sử dụng này.
+
+# 4.Phân tích ca sử dụng Maintain Timecard
+![diagram](https://www.planttext.com/api/plantuml/png/Z91D3e8m48NtdA9BIF02BDm0YMxK18th0eCsKehJbgHdS-6Hl8Ajf8aXNR2Sd-_DU_DvlKi-zi80aCsMd1c7Xc9R0KwiWOmWF3L8THbRgi1Fuy8MATa9ZV8gy05jIl8xnHiSDAy1asYXuwHFrA3eUulIcigVj4864_ZxRXBxObyaqO88-lk7GrTTAxUjZ3G8rlKHvoZbeD2io-7mO0199_0BizuwpuqOEeQyidWSV9KFbP51ADQPsNAbgDBI4by0003__mC0)
+
+- Employee: Lớp này chịu trách nhiệm cung cấp thông tin của nhân viên và xác thực quyền truy cập khi yêu cầu cập nhật bảng chấm công.
+- TimeCard: Đại diện cho từng bản ghi chấm công của nhân viên. Mỗi bản ghi chứa thông tin về số giờ làm, ngày làm việc, và mã công việc.
+- PayrollDatabase: Chịu trách nhiệm lưu trữ thông tin của nhân viên và các bảng chấm công, đảm bảo rằng tất cả bản ghi chấm công được cập nhật và lưu trữ đúng cách.
+- TimecardService: Chịu trách nhiệm quản lý yêu cầu cập nhật bảng chấm công của nhân viên, xử lý việc tạo mới hoặc cập nhật các bản ghi chấm công, và xác nhận trạng thái cập nhật tới nhân viên.
