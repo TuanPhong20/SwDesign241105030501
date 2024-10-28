@@ -1,4 +1,4 @@
-# 1.Phân tích iến trúc
+# 1.Phân tích kiến trúc
 Đề xuất MVC vì:
 - Lợi ích
     + Tách biệt giữa các thành phần: Giúp dễ dàng thay đổi giao diện hoặc quy trình nghiệp vụ mà không ảnh hưởng đến các phần còn lại của     hệ thống.
