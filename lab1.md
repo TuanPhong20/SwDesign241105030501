@@ -1,25 +1,23 @@
-Đề xuất Kiến trúc Layer vì:
-- Khả năng mở rộng tốt: Việc phân tầng giúp hệ thống dễ dàng mở rộng khi số lượng nhân viên và khối lượng dữ liệu tăng lên.
-- Bảo trì dễ dàng: Mỗi tầng trong kiến trúc xử lý một chức năng cụ thể, giúp dễ dàng bảo trì và cập nhật hệ thống.
-- Tính bảo mật cao: Sử dụng các cơ chế bảo mật hiện đại như mã hóa, xác thực và kiểm tra audit logs giúp bảo vệ thông tin nhạy cảm.
-- Tích hợp dễ dàng: Khả năng tích hợp với cơ sở dữ liệu DB2 hiện tại mà không cần thay thế giúp tiết kiệm chi phí và thời gian.
-  
-Presentation Layer (Tầng giao diện):
-- Giao diện mà người dùng tương tác với hệ thống.
-- Hiển thị dữ liệu và nhận input từ người dùng (như thông tin chấm công, báo cáo).
+Đề xuất Kiến trúc MVC  vì:
+- Tách biệt giữa các thành phần: Giúp dễ dàng thay đổi giao diện hoặc quy trình nghiệp vụ mà không ảnh hưởng đến các phần còn lại của hệ thống.
+- Dễ mở rộng và bảo trì: Các thay đổi trong nghiệp vụ tính lương hay yêu cầu mới của nhân viên có thể được triển khai dễ dàng nhờ vào sự tách biệt giữa Model, View, và Controller.
+- Bảo mật và kiểm soát: Phân quyền truy cập cho phép nhân viên chỉ xem và chỉnh sửa dữ liệu của mình, đồng thời quản trị viên có quyền quản lý cao hơn trong hệ thống.
 
-Business Logic Layer (Tầng nghiệp vụ):
-- Xử lý các quy tắc nghiệp vụ của hệ thống (tính toán lương, hoa hồng, xử lý báo cáo).
-- Đảm bảo các thao tác theo đúng logic kinh doanh của tổ chức.
+Model (Mô hình):
+- Lớp Model chứa các thành phần quản lý dữ liệu và logic xử lý nghiệp vụ liên quan đến bảng lương.
+- Các đối tượng trong Model sẽ bao gồm: Employee (Nhân viên), Timecard (Bảng chấm công), PurchaseOrder (Đơn hàng), và Payment (Thanh toán).
+- Model cũng quản lý kết nối tới cơ sở dữ liệu Quản lý Dự án hiện có (DB2) để lấy dữ liệu về dự án và số hiệu công việc mà không cần cập nhật hoặc thay đổi nội dung.
 
-Data Access Layer (Tầng truy xuất dữ liệu):
-- Quản lý việc kết nối và tương tác với cơ sở dữ liệu.
-- Thực hiện các thao tác đọc/ghi dữ liệu cần thiết cho hệ thống.
+View (Giao diện):
+- View sẽ chịu trách nhiệm hiển thị thông tin và giao tiếp với người dùng.
+- Giao diện Windows-based giúp nhân viên nhập thông tin chấm công, đơn hàng, và xem báo cáo chi tiết về số giờ làm, số lương đã nhận, thời gian nghỉ phép còn lại.
+- Đối với quản trị viên bảng lương, View sẽ cung cấp giao diện để quản lý thông tin nhân viên và chạy các báo cáo quản trị.
 
-Integration Layer (Tầng tích hợp):
-- Tích hợp hệ thống với các dịch vụ và cơ sở dữ liệu bên ngoài (ví dụ, cơ sở dữ liệu DB2 quản lý dự án).
-- Đóng vai trò trung gian, đảm bảo tính tương thích giữa các hệ thống khác nhau.
+Controller (Điều khiển):
+- Controller sẽ xử lý các yêu cầu từ người dùng, điều phối giữa View và Model.
+- Khi nhân viên nhập thông tin chấm công hoặc yêu cầu xem báo cáo, Controller sẽ nhận các yêu cầu này, xác minh thông tin và tương tác với Model để lưu hoặc truy xuất dữ liệu tương ứng.
+- Đối với các thao tác đặc biệt như tính toán bảng lương tự động, Controller sẽ điều khiển quá trình này dựa trên cấu trúc nghiệp vụ trong Model và trả kết quả qua View.
 
 # Biểu đồ Package
-![package diagram](https://www.planttext.com/api/plantuml/png/T5AzQiCm4Dxr54Tslq2740TdCAJKf6Gg6GxbC6fjoPpaWYbviWnzfBv25DDWoOv6tNs_X_wklnlha5tVDg93-OKrmQfYigGTEcKqx74WNi6F0FWubYS0SH4JTDjRfSbQs9jQoGXSuS2cQTw9lvMaqtsqQxl634Ilg3sxzHxXza2TuMaIsXJe478fHwUbHv6_HVhZE-INsb7Doq8Lcq-IRifJRFCpTevuv1zBoB8rn4tW1NfBzh5CTfhXedQFdPX91sw-WqVXsDaZqpPXY1afzaoBBt49mQTvapVqJFL_UC_Ta3xVlzaD003__mC0))
+![package diagram](https://www.planttext.com/api/plantuml/png/X5FBReCm4Bpp5HRt_40FLSZZa0Dg53MvR-rjwjROr3QjeYfVraC_gR_GDGP2WIWSGEpEUcQ7uVVxP-uyM5yLAYc1ly4HMPeVbYop_4LwvBwocBAl965qjOZS25HKPCt55JZ7raMfp0bnK7wK1NAmOb3ULiG03X-iG3limQb0xRjgfsm57fveY6MSetDfJyDbUhLO6gr9kZHwehsrvfMQEMWwCj2i5XtgdCJxlsqF4ZzxH9sOTb-sqHxjCt2SrjCQiDRUdlQR2SGEIsDzu97ws4ESnwHaZJLAiKmKKjzYRXLUTfsaRywCAaRq0pV8Mn_GQ4S1Q1UzGCRVDTIlzbkzLm5Hug3T28oXdCtk-nBlo35hFgH0oWM59wsXFK30nqc2xl2zGkSZb95higmKX1p5kJe9OuQzesTMvyrD4jHp0LWAyAGalAS9wPwZ5k7N-mC00F__0m00)
   
