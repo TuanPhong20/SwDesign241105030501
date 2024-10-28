@@ -65,7 +65,7 @@ Controller (Điều khiển):
     + PayrollDatabase: Là cơ sở dữ liệu trung tâm, chứa thông tin toàn diện về nhân viên, bảng chấm công, và đơn mua hàng.
     + PaymentService: Xử lý các yêu cầu thanh toán và tính toán lương, liên kết với PayrollDatabase.
     + TimecardService: Quản lý các hoạt động liên quan đến bảng chấm công, liên kết với PayrollDatabase.
-- biểu đồ hợp nhất 2 ca sử dụng
+- BBiểu đồ hợp nhất 2 ca sử dụng
 ![diagram](https://www.planttext.com/api/plantuml/png/X5HBRi8m4Dtd52DM89KBP561e5AxeKXGTUtOKneHn-dOHeggdgoB7gbNw8HFi4aeNcGnVlFUcu_p-_qpiKwGyxf8AY6tOeCmM8gQJ570ghOEzG0-4-0Z2s4jFEYgC3NYCTYSCJpDKrWvoijD45m8ZJtXgLA4rlRSiAp6qgthAixxIWBzTQvn9aX5-dFXEANv1i57uyc-6jgYuZlZioAydRqBsk32wmpfkjhIatmN5fz98TsMd6hZInUfnNI7ndAMo9Wr80ImOeUduePEfcsbenHs9bS1b93juWuRdY7gwjn-nfu6rAlUz7U5jCjbB2v58Nt1nHmn3UkPQjJf7q15Hl8Oh-5RnvtXIIwfpmBXXqVhNYh5DcA-E_Y_7wLn-LlTbzdZf5tWyVZ-l4qfwqj3odOnyGwaO7scStS0jladih2w5BGe-K4foEezEcRQSySZIKzj3N8kLkR2jNM6NzDLP5l8JMIdoWWUcZpwZXZITYSjy1H4svom7_s9VZysc_1u9bYgvaVq1m00__y30000)
 
 - Chức năng
