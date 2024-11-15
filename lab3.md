@@ -28,7 +28,7 @@
 |--------------|--------------|
 |EmployeeEntity|Data Access::Employee Management|
 |TimeCardEntity|Data Access::Employee Management|
-|PaymentMethodEntity|Data|
+|PaymentMethodEntity|DataAccess::Payment|
 |PayrollProcessor|Business Services::Payroll Processing|
 |ReportGeneratorComponent|Report|
 |EmployeeDataAccess|DataAccess|
