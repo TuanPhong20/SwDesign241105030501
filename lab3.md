@@ -1,3 +1,7 @@
+# Subsystem context diagrams
+- Các hệ thống con trong hệ thống: BankSystem, PrintService, ProjectManagementDatabase.
+![diagram](https://www.planttext.com/api/plantuml/png/P94n3i8m34NtdiBApWKO42giI8YUm1I30arI4XS98Kx6m96u0h6RfT0fjPzVlfNFwxrCZ947rrKzjXSy4Mpn7aFNDVV4vE1HGVxQuFhWoJEOqePLY6G0anv-eHhzPHGe8hz_dcWzDnHljXqzMlYdmfbQtg3FqLmkhP5nZwcCRDPrfICI0cQpXLu5Sp0xkWwKMBQHCQEKDeLIVAxBI1SQHXwIcQeqa50D-GFig0-nUCREHAILLV176nso3VvNbgDESesBWUnJf49CdGKXHjlbTCzgcPF8Mtq1003__mC0)
+
 # Analysis class to design element map
 |Analysis Class|Analysis Class|
 |--------------|--------------|
