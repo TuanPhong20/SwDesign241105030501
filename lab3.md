@@ -1,10 +1,15 @@
 # Analysis class to design element map
-Lớp phân tích	Phần tử thiết kế
-Employee	EmployeeEntity
-TimeCard	TimeCardEntity
-PaymentMethod	PaymentMethodEntity
-PayrollService	PayrollProcessor
-EmployeeRepository	EmployeeDataAccess
-TimecardRepository	TimecardDataAccess
-PaymentRepository	PaymentDataAccess
-ReportGenerator	ReportGeneratorComponent
+|lớp phân tích|phần tử thiết kế|
+|Employee|EmployeeEntity|
+|TimeCard|TimeCardEntity|
+|PaymentMethod|PaymentMethodEntity|
+|PayrollService|PayrollProcessor|
+|EmployeeRepository|EmployeeDataAccess|
+|TimecardRepository|TimecardDataAccess|
+|PaymentRepository|PaymentDataAccess|
+|ReportGenerator|ReportGeneratorComponent|
+
+
+|||
+|||
+
